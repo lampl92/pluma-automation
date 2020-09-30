@@ -5,6 +5,7 @@ from pluma.test import TestBase, TaskFailed
 
 
 class MemorySize(TestBase):
+    '''Tests the device's available and total memory'''
     def __init__(self, board, total_mb=None, available_mb=None):
         super().__init__(board)
         self.available_mb = available_mb

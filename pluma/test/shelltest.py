@@ -9,6 +9,7 @@ log = Logger()
 
 
 class ShellTest(TestBase):
+    '''Inline shell test'''
     shell_test_index = 0
 
     def __init__(self, board: Board, script: str, name: str = None,

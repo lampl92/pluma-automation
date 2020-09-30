@@ -42,6 +42,7 @@ class LoginAction(DeviceActionBase):
 
 @DeviceActionRegistry.register()
 class WaitAction(DeviceActionBase):
+    '''Delays the execution of the next test/action for a set amount of time'''
     def __init__(self, board: Board, duration: int):
         super().__init__(board)
         self.duration = duration
@@ -76,6 +77,7 @@ class WaitForPatternAction(DeviceActionBase):
 
 @DeviceActionRegistry.register()
 class SetAction(DeviceActionBase):
+    '''Sets the type of console to use'''
     def __init__(self, board: Board, device_console: str = None):
         super().__init__(board)
 

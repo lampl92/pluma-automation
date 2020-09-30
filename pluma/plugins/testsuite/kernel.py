@@ -4,6 +4,7 @@ from pluma.test import TestBase, TaskFailed, CommandRunner
 
 
 class KernelModulesLoaded(TestBase):
+    '''Verifies that a set of kernel modules are loaded'''
     def __init__(self, board, modules: list):
         super().__init__(board)
 

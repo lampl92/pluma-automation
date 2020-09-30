@@ -91,6 +91,10 @@ class TestDefinition():
 
     def __repr__(self):
         return f'{self.__module__}.{self.__class__.__name__}{self.parameter_sets or ""}'
+        
+    def description(self):
+        desc = self.testclass.__doc__ or "No description"
+        return f'{desc}'
 
 
 class TestsProvider(ABC):

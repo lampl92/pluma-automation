@@ -196,6 +196,9 @@ class TestsConfig:
                     printed_data = json.dumps(test_parameters)
                     log.log(f'          {printed_data}', level=log_level)
 
+            if log_level == LogLevel.IMPORTANT:
+                log.log(f'          {test.description()}', level=log_level)
+
         log.log('', level=log_level)
 
     @staticmethod

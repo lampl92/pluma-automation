@@ -26,6 +26,7 @@ class NetworkingTestBase(ShellTest):
 
 
 class RespondsToPing(NetworkingTestBase):
+    '''Verifies that there's a response to ping on the target'''
     def __init__(self, board: Board, target: str = None):
         super().__init__(board, target)
         self.run_on_host = True
@@ -33,6 +34,7 @@ class RespondsToPing(NetworkingTestBase):
 
 
 class IperfBandwidth(NetworkingTestBase):
+    '''Verifies the minimum bandwidth (in MBps)'''
     def __init__(self, board: Board, minimum_mbps: float, target: str = None, duration: int = None):
         super().__init__(board, target)
         self.duration = int(duration) if duration else 10
