@@ -38,7 +38,7 @@ else
     echo "Running all tests in $test_dir"
 fi
 
-test_command="-m pytest "$test_dir
+test_command="-m pytest -n $(nproc) "$test_dir
 
 echo $@
 if [ $COVERAGE -eq 1 ]; then
