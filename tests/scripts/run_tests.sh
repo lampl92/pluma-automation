@@ -38,7 +38,14 @@ else
     echo "Running all tests in $test_dir"
 fi
 
-test_command="-m pytest -n $(nproc) "$test_dir
+PARALLEL=""
+NUM_PROC=$(nproc)
+if [ $NUM_PROC -gt 1 ]; then
+    echo "Running tests in parallel on $NUM_PROC cores"
+    PARALLEL="-n $NUM_PROC"
+fi
+
+test_command="-m pytest $PARALLEL "$test_dir
 
 echo $@
 if [ $COVERAGE -eq 1 ]; then
