@@ -40,7 +40,7 @@ fi
 
 PARALLEL=""
 NUM_PROC=$(nproc)
-if [ $NUM_PROC -gt 1 ]; then
+if [ $NUM_PROC -gt 1 -a "${PLUMA_ENV:-}" != "CI" ]; then
     echo "Running tests in parallel on $NUM_PROC cores"
     PARALLEL="-n $NUM_PROC"
 fi
