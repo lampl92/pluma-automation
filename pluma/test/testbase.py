@@ -35,3 +35,7 @@ class TestBase():
     def __repr__(self):
         """Return a human-readable name for the test"""
         return self._test_name
+
+    def description(self):
+        return self.__doc__
+        

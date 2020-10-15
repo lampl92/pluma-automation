@@ -9,7 +9,7 @@ log = Logger()
 
 
 class ShellTest(TestBase):
-    '''Inline shell test'''
+    '''Execute given script within the target (or host) shell'''
     shell_test_index = 0
 
     def __init__(self, board: Board, script: str, name: str = None,

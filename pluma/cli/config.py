@@ -93,7 +93,7 @@ class TestDefinition():
         return f'{self.__module__}.{self.__class__.__name__}{self.parameter_sets or ""}'
 
     def description(self):
-        desc = self.testclass.__doc__
+        desc = self.testclass.description(self.testclass)
 
         return desc
 
