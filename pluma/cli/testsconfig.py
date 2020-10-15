@@ -197,7 +197,12 @@ class TestsConfig:
                     log.log(f'          {printed_data}', level=log_level)
 
             if log_level == LogLevel.IMPORTANT:
-                log.log(f'          {test.description()}', level=log_level)
+                description = test.description()
+                
+                if description:
+                    log.log(f'          {description}\n', level=log_level)
+                else:
+                    log.log(f'          No description\n', color='yellow', level=log_level)
 
         log.log('', level=log_level)
 
