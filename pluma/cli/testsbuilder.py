@@ -1,8 +1,7 @@
 import subprocess
 from pathlib import Path
-import sys
 import shutil
-from pluma.core.baseclasses import Logger, LogLevel
+from pluma.core.baseclasses import Logger
 
 log = Logger()
 
