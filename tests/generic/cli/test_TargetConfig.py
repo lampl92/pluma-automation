@@ -19,6 +19,12 @@ def test_TargetConfig_create_context_should_error_on_unconsumed(target_config):
         TargetConfig.create_context(Configuration(invalid_config))
 
 
+def test_TargetConfig_create_context_passes_serial_console_to_create_power_control(serial_config):
+    config = Configuration({'console': {'serial': serial_config}})
+    context = TargetConfig.create_context(config)
+    assert context.board.power is not None
+
+
 def test_TargetFactory_parse_credentials():
     login = 'abc'
     password = 'def'
